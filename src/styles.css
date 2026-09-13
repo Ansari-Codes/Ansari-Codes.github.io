@@ -1,0 +1,365 @@
+@import "tailwindcss";
+
+/*
+|--------------------------------------------------------------------------
+| Portfolio Color System
+|--------------------------------------------------------------------------
+| Purple / White / Black
+| Light + Dark semantic color tokens
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    /* Core */
+    --portfolio-ink: #111111;
+    --portfolio-muted: #666666;
+
+    --portfolio-paper: #ffffff;
+    --portfolio-surface: #f9eeff;
+    --portfolio-surface-raised: #ede0f3;
+    --portfolio-surface-soft: #f9eafb;
+
+    /* Borders */
+    --portfolio-line: #e5e5e5;
+    --portfolio-line-strong: #cccccc;
+
+    /* Brand */
+    --portfolio-brand: #9333ea;
+    --portfolio-brand-strong: #7e22ce;
+    --portfolio-brand-soft: #f3e8ff;
+
+    /* Accent */
+    --portfolio-accent-strong: #9810fa;
+    --portfolio-accent: #c87aff;
+    --portfolio-accent-soft: #f3e8ff;
+
+    /* Status */
+    --portfolio-success: #16a34a;
+    --portfolio-warning: #ca8a04;
+    --portfolio-danger: #dc2626;
+    --portfolio-info: #2563eb;
+
+    /* UI */
+    --radius-control: 0.75rem;
+    --radius-panel: 1.25rem;
+
+    --shadow-panel:
+        0 1rem 3rem rgb(23 19 31 / 0.08);
+
+    --motion-standard:
+        180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    color-scheme: light;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Dark Theme
+|--------------------------------------------------------------------------
+*/
+
+.dark {
+    /* Core */
+    --portfolio-ink: #ffffff;
+    --portfolio-muted: #a3a3a3;
+
+    --portfolio-paper: #000000;
+    --portfolio-surface: #0c0015;
+    --portfolio-surface-raised: #111111;
+    --portfolio-surface-soft: #171717;
+
+    /* Borders */
+    --portfolio-line: #262626;
+    --portfolio-line-strong: #404040;
+
+    /* Brand */
+    --portfolio-brand: #c084fc;
+    --portfolio-brand-strong: #d8b4fe;
+    --portfolio-brand-soft: #2e1065;
+
+    /* Accent */
+    --portfolio-accent: #c084fc;
+    --portfolio-accent-soft: #352047;
+
+    /* Status */
+    --portfolio-success: #4ade80;
+    --portfolio-warning: #facc15;
+    --portfolio-danger: #f87171;
+    --portfolio-info: #60a5fa;
+
+    --shadow-panel:
+        0 1rem 3rem rgb(0 0 0 / 0.35);
+
+    color-scheme: dark;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Tailwind Theme
+|--------------------------------------------------------------------------
+*/
+
+@theme {
+    --color-ink: var(--portfolio-ink);
+    --color-muted: var(--portfolio-muted);
+
+    --color-paper: var(--portfolio-paper);
+    --color-surface: var(--portfolio-surface);
+    --color-surface-raised: var(--portfolio-surface-raised);
+    --color-surface-soft: var(--portfolio-surface-soft);
+
+    --color-line: var(--portfolio-line);
+    --color-line-strong: var(--portfolio-line-strong);
+
+    --color-brand: var(--portfolio-brand);
+    --color-brand-strong: var(--portfolio-brand-strong);
+    --color-brand-soft: var(--portfolio-brand-soft);
+
+    --color-accent: var(--portfolio-accent);
+    --color-accent-soft: var(--portfolio-accent-soft);
+    --color-accent-strong: var(--portfolio-accent-strong);
+
+    --color-success: var(--portfolio-success);
+    --color-warning: var(--portfolio-warning);
+    --color-danger: var(--portfolio-danger);
+    --color-info: var(--portfolio-info);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Global
+|--------------------------------------------------------------------------
+*/
+
+html {
+    background: var(--portfolio-paper);
+    color: var(--portfolio-ink);
+
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+
+    transition:
+        background-color var(--motion-standard),
+        color var(--motion-standard);
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+
+    background: var(--portfolio-paper);
+    color: var(--portfolio-ink);
+
+    transition:
+        background-color var(--motion-standard),
+        color var(--motion-standard);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Form Controls
+|--------------------------------------------------------------------------
+*/
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Selection
+|--------------------------------------------------------------------------
+*/
+
+::selection {
+    background: var(--portfolio-brand-soft);
+    color: var(--portfolio-brand-strong);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Scrollbar
+|--------------------------------------------------------------------------
+*/
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--portfolio-line-strong)
+        var(--portfolio-paper);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--portfolio-paper);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--portfolio-line-strong);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--portfolio-brand);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Links
+|--------------------------------------------------------------------------
+*/
+
+a {
+    color: var(--portfolio-brand);
+
+    transition:
+        color var(--motion-standard);
+}
+
+a:hover {
+    color: var(--portfolio-brand-strong);
+    cursor: pointer;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Focus
+|--------------------------------------------------------------------------
+*/
+
+:focus-visible {
+    outline: 2px solid var(--portfolio-brand);
+    outline-offset: 3px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Reduced Motion
+|--------------------------------------------------------------------------
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0ms !important;
+        animation-duration: 0ms !important;
+    }
+}
+
+@keyframes reveal-up {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal-up {
+    animation: reveal-up 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+[data-reveal] { opacity: 1; }
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.motion-float {
+    animation: motion-float 6s ease-in-out infinite;
+}
+
+.motion-pulse {
+    animation: motion-pulse 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .motion-float,
+    .motion-pulse,
+    .animate-reveal-up {
+        animation: none;
+    }
+}
+
+@keyframes motion-float {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(3deg); }
+    50% { transform: translate3d(0, -12px, 0) rotate(1deg); }
+}
+
+@keyframes motion-pulse {
+    0%, 100% { opacity: 0.65; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+}
+
+.card-grad { background: var(--portfolio-paper); }
+
+
+/* One visual language, lightweight compositor-only entrances. */
+:root { --portfolio-brand: #7c3aed; --portfolio-brand-strong: #6d28d9; --portfolio-accent-strong: #7c3aed; --portfolio-surface: #faf8ff; --portfolio-line: #e6dff0; --portfolio-muted: #655d73; --shadow-panel: 0 8px 28px rgb(45 22 80 / .045); }
+.dark { --portfolio-paper: #100c18; --portfolio-surface: #191222; --portfolio-surface-raised: #241a30; --portfolio-line: #3b2d4a; --portfolio-muted: #b9acc9; --portfolio-accent-strong: #a879f5; }
+html { scroll-padding-top: 6rem; }
+section { scroll-margin-top: 0; }
+p { text-wrap: pretty; }
+.landing-card { transition: transform 220ms ease, border-color 220ms ease; }
+.landing-card:hover { border-color: var(--portfolio-brand); transform: translateY(-4px); }
+.landing-card > span:has(img) { overflow: hidden; border-radius: var(--radius-panel) var(--radius-panel) 0 0; }
+.hero-copy { padding-top: 3rem; }
+.hero-eyebrow { color: var(--portfolio-brand); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 1.5rem; }
+.constellation { position: absolute; inset: 0; pointer-events: none; overflow: hidden; background: radial-gradient(ellipse at 80% 40%, var(--portfolio-brand-soft), transparent 65%); }
+.constellation::before { content: ''; position: absolute; inset: 0; opacity: .13; background-image: radial-gradient(var(--portfolio-brand) 1px, transparent 1px); background-size: 28px 28px; }
+.constellation i { position: absolute; width: 5px; height: 5px; background: var(--portfolio-brand); border-radius: 50%; opacity: .35; }
+.constellation i:nth-child(3n) { width: 12px; height: 12px; background: transparent; border: 1px solid var(--portfolio-brand); border-radius: 2px; }
+.code-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem; font-family: ui-monospace, monospace; font-size: .7rem; }
+.code-art strong { font-size: clamp(3rem, 6vw, 5rem); letter-spacing: -.1em; color: #e9d5ff; }
+.code-art-label { letter-spacing: .2em; opacity: .75; }
+.code-art-rule { width: 60%; height: 2px; background: #c4b5fd; }
+.code-art-footer { margin-top: 2rem; color: #e9d5ff; }
+.w-button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border: 1px solid transparent; border-radius: var(--radius-control); font-weight: 650; cursor: pointer; transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+.w-button--primary { color: white; background: #7c3aed; }
+.w-button--primary:hover { background: #6d28d9; }
+.w-button--secondary { background: var(--portfolio-brand-soft); color: var(--portfolio-brand-strong); border-color: var(--portfolio-line); }
+.w-button--ghost { background: transparent; color: var(--portfolio-ink); border-color: var(--portfolio-line); }
+.w-button--danger { background: #b91c1c; color: white; }
+.w-button--sm { padding: .5rem .8rem; font-size: .875rem; }
+.w-button--md { padding: .7rem 1rem; font-size: .875rem; }
+.w-button--lg { padding: .9rem 1.25rem; }
+.w-button:not(:disabled):hover { transform: translateY(-2px); }
+.w-button:disabled { opacity: .55; cursor: not-allowed; }
+.loading-spinner { width: 1rem; height: 1rem; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: button-spin 800ms linear infinite; }
+.skip-link { position: fixed; top: .5rem; left: 1rem; z-index: 100; transform: translateY(-200%); padding: .75rem; background: var(--portfolio-paper); }
+.skip-link:focus { transform: none; }
+@keyframes button-spin { to { transform: rotate(360deg); } }
+@keyframes enter-left { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+@keyframes enter-right { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes enter-scale { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes enter-tilt { from { opacity: 0; transform: translateY(18px) rotate(-2deg); } to { opacity: 1; transform: none; } }
+@keyframes enter-settle { from { opacity: 0; transform: translateY(-16px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes star-drift { from { transform: translateY(0) rotate(0); } to { transform: translateY(-22px) rotate(60deg); } }
+@media (prefers-reduced-motion: no-preference) {
+ [data-reveal].is-visible { animation: var(--entrance, reveal-up) 650ms cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms) backwards; }
+ [data-reveal="1"] { --entrance: enter-left; } [data-reveal="2"] { --entrance: enter-scale; }
+ [data-reveal="3"] { --entrance: enter-right; } [data-reveal="4"] { --entrance: enter-tilt; } [data-reveal="5"] { --entrance: enter-settle; }
+ .constellation i { animation: star-drift 5s ease-in-out alternate 2; animation-delay: calc(var(--i) * -240ms); }
+ .motion-float, .motion-pulse { animation-iteration-count: 2; }
+}
+@media (prefers-reduced-motion: reduce) { [data-reveal], [data-reveal].is-visible { opacity: 1; transform: none; animation: none; } .landing-card:hover, .w-button:hover { transform: none; } }
+@media (max-width: 640px) { .hero-copy { padding-top: 0; } .code-art { padding: 1.5rem; } }
