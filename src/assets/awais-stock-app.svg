@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">ASA logo</title>
+  <desc id="desc">A geometric ASA monogram in blue and white.</desc>
+  <rect width="160" height="160" rx="32" fill="#092a4a"/>
+  <path d="M31 116 58 43h18l27 73H88l-5-15H52l-5 15H31Zm27-31h20l-10-30-10 30Z" fill="#4da9f5"/>
+  <path d="M91 116c17 0 30-8 30-22 0-13-9-19-25-23-9-2-12-4-12-8 0-4 4-7 10-7 8 0 14 3 19 8l9-11c-7-7-16-11-28-11-17 0-28 9-28 22 0 14 10 20 26 24 9 2 12 4 12 8 0 5-4 8-12 8-9 0-17-4-23-10l-10 11c8 8 19 11 32 11Z" fill="#ffffff"/>
+</svg>
