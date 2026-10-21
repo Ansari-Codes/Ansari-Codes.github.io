@@ -23,6 +23,14 @@ const projects: Project[] = [
     slug: '/personal-workbook-lm'
   },
   {
+    title: 'DotMuted',
+    description: 'A social app, looks like twitter, but allows raw markdown (most of). A simple project with many features. 💬',
+    repository: DEVGIT + '/social-app',
+    live_link: 'https://ansari-codes.github.io/social-app',
+    icon: new URL('../../assets/dotmuted.svg', import.meta.url).href,
+    slug: '/dotmuted'
+  },
+  {
     title: 'Quick Task Manager',
     description: 'A little less chaos, a little more done. A personal task manager that brings my frontend and backend skills together. ✅',
     repository: DEVGIT + '/task-manager-vue-fastify',
