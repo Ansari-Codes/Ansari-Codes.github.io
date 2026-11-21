@@ -12,7 +12,7 @@ const experience = [
     {
         image: new URL('../../assets/nbt-hub.jfif', import.meta.url).href,
         title: 'Internship @ NBT Hub',
-        text: 'I am learning how software is planned, reviewed, and shipped while contributing to practical team work.',
+        text: 'I learnt how software is planned, reviewed, and shipped while contributed to practical team work.',
         points: ['Team collaboration', 'Code reviews', 'Real projects'],
     },
 ]
@@ -23,7 +23,7 @@ const experience = [
         <div class="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2">
             <CompLandCard v-for="role in experience" :key="role.title" class="h-full flex-col p-4">
                 <div class="flex w-full flex-col items-center gap-4 p-2 text-center">
-                    <img width="160" height="160" :src="role.image" :alt="`${role.title} logo`" loading="lazy" decoding="async" class="object-contain aspect-square max-w-40 rounded-4xl bg-white p-2 object-contain" />
+                    <img width="160" height="160" :src="role.image" :alt="`${role.title} logo`" loading="lazy" decoding="async" class="object-contain aspect-square max-w-40 rounded-4xl bg-white p-2" />
                     <div>
                         <h2 class="text-2xl font-bold">{{ role.title }}</h2>
                         <p class="mt-2 text-muted">{{ role.text }}</p>
