@@ -4,7 +4,17 @@ import WLink from '@/Widgets/WLink.vue'
 import CompLandSection from '@/Components/Landing/Common/CompLandSection.vue';
 import CompLandCard from './Common/CompLandCard.vue';
 
-const featuredProjects = orderedProjects.slice(0, 6)
+const featuredProjectIds = [
+  'personal-workbook-lm',
+  'social-app',
+  'kutlync',
+  'task-manager',
+  'progressive-py',
+]
+
+const featuredProjects = featuredProjectIds
+  .map((id) => orderedProjects.find((project) => project.id === id))
+  .filter((project) => project !== undefined)
 </script>
 
 <template>
@@ -32,13 +42,17 @@ const featuredProjects = orderedProjects.slice(0, 6)
           </div>
         </CompLandCard>
       </div>
-    </div>
-    <div v-if="orderedProjects.length > featuredProjects.length" class="mt-8 flex justify-center">
       <RouterLink
         :to="{ name: 'projects' }"
-        class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline transition hover:bg-brand-strong focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+        class="group h-full min-h-48"
       >
-        Explore more projects <span aria-hidden="true">→</span>
+        <CompLandCard class="h-full min-h-48 items-center justify-center p-6 text-center transition duration-200 group-hover:-translate-y-1 group-hover:border-brand/50">
+          <div class="flex w-full flex-col items-center">
+            <span class="mb-4 grid h-14 w-14 place-items-center rounded-full border border-brand/30 bg-brand-soft text-2xl text-brand" aria-hidden="true">↗</span>
+            <h3 class="text-2xl font-bold group-hover:text-brand">Discover more</h3>
+            <p class="mt-2 max-w-xs text-sm leading-6 text-muted">Explore all projects, tools, experiments, and case studies.</p>
+          </div>
+        </CompLandCard>
       </RouterLink>
     </div>
   </CompLandSection>

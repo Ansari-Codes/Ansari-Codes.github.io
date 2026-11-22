@@ -186,7 +186,7 @@ export const projects: Project[] = [
     },
     {
         id: 'personal-workbook-lm',
-        title: 'Personal Workbook LM',
+        title: 'PAWM',
         description: 'A personal language-model workbook and BYOK platform designed to run locally on your PC.',
         group: 'local',
         technologies: ['Vue', 'FastAPI', 'Python', 'AI', 'LLM APIs', 'Local AI'],
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     },
     {
         id: 'task-manager',
-        title: 'Task Manager',
+        title: 'Quick Task Manager',
         description: 'A professional-grade task manager that offers more than a basic to-do list without unnecessary complexity.',
         group: 'web',
         technologies: ['Vue', 'Fastify', 'JavaScript'],

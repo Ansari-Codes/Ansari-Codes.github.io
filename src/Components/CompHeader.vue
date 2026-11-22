@@ -37,7 +37,7 @@ const navLinks: NavLink[] = [
 	},
 	{
 		label: 'Projects',
-		goto: '/#projects'
+		goto: '/projects'
 	},
 	{
 		label: 'Interests',
