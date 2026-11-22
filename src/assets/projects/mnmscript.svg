@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     role="img"
+     aria-label="ManimScript logo">
+  <defs>
+    <linearGradient id="orbitGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#00C2FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0B1020"/>
+  <circle cx="256" cy="256" r="176" fill="none"
+          stroke="url(#orbitGradient)" stroke-width="28"/>
+  <ellipse cx="256" cy="256" rx="208" ry="84"
+           fill="none" stroke="#9C8FFF" stroke-width="18"
+           transform="rotate(-28 256 256)" opacity="0.9"/>
+  <circle cx="420" cy="166" r="27" fill="#FFD166"/>
+  <path d="M256 112 L319 236 L256 400 L193 236 Z"
+        fill="#F8FAFC" stroke="#C4CEFF" stroke-width="14"
+        stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="36" fill="#6C63FF"/>
+  <circle cx="256" cy="256" r="16" fill="#FFFFFF"/>
+</svg>
