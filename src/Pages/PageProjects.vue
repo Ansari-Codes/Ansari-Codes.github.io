@@ -31,11 +31,11 @@ const filteredGroups = computed(() => {
           project.title,
           project.description,
           ...project.technologies,
-          project.blog.whatIsIt,
-          project.blog.whyCreated,
-          project.blog.howCreated,
-          project.blog.usage,
-        ].some((value) => value.toLocaleLowerCase().includes(query)),
+          project.blog.sections.about,
+          project.blog.sections.howCreated,
+          project.blog.sections.usage,
+          project.blog.sections.stack,
+        ].some((value) => value?.toLocaleLowerCase().includes(query) ?? false),
       ),
     }))
     .filter((group) => group.projects.length > 0)
